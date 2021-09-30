@@ -1,0 +1,27 @@
+<button routerLink='/add' type="button" class="btn btn-dark">Agregar</button>
+<hr/>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Year</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of ListMovie">
+      <th>{{movie.mov_id}}</th>
+      <td>{{movie.mov_title}}</td>
+      <td>{{movie.mov_year}}</td>
+      <td>
+        <button type="button" class="btn btn-dark" (click)="editMovie(movie.mov_id)">Editar</button>
+      </td>
+      <td>
+        <button type="button" (click)="delMovie(movie.mov_id)" class="btn btn-dark">Eliminar</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
